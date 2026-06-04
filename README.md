@@ -267,7 +267,7 @@ MONGO_URI=your_mongodb_connection_string
 ```env
 VITE_API_BASE_URL=your_backend_api_url
 ```
-
+<!-- 
 ## Deployment
 
 The project is deployed on Render.
@@ -288,7 +288,7 @@ ADD_BACKEND_RENDER_URL_HERE
 
 ```txt
 ADD_BACKEND_RENDER_URL_HERE
-```
+``` -->
 
 ## Postman Collection
 
