@@ -1,0 +1,127 @@
+{
+  "info": {
+    "name": "Travel Package Booking",
+    "description": "Postman collection for Travel Package Booking Module APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": ["{{base_url}}"],
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Add Package",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Dubai Luxury Trip\",\n  \"destination\": \"Dubai\",\n  \"price\": 45000,\n  \"duration\": \"5 Days / 4 Nights\",\n  \"availableSeats\": 20,\n  \"startDate\": \"2026-07-10\",\n  \"image\": \"https://images.unsplash.com/photo-1512453979798-5ea266f8880c\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/packages",
+          "host": ["{{base_url}}"],
+          "path": ["api", "packages"]
+        }
+      }
+    },
+    {
+      "name": "Get All Packages",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/packages",
+          "host": ["{{base_url}}"],
+          "path": ["api", "packages"]
+        }
+      }
+    },
+    {
+      "name": "Search Sort Pagination Packages",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/packages?destination=dubai&sort=price_asc&page=1&limit=5",
+          "host": ["{{base_url}}"],
+          "path": ["api", "packages"],
+          "query": [
+            {
+              "key": "destination",
+              "value": "dubai"
+            },
+            {
+              "key": "sort",
+              "value": "price_asc"
+            },
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Single Package",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/packages/{{package_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["api", "packages", "{{package_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerName\": \"Rahul Sharma\",\n  \"email\": \"rahul@gmail.com\",\n  \"seats\": 2,\n  \"packageId\": \"{{package_id}}\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/bookings",
+          "host": ["{{base_url}}"],
+          "path": ["api", "bookings"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "package_id",
+      "value": "PASTE_PACKAGE_ID_HERE"
+    }
+  ]
+}
