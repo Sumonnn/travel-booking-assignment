@@ -226,8 +226,8 @@ Request body:
 
 ```json
 {
-  "customerName": "Rahul Sharma",
-  "email": "rahul@gmail.com",
+  "customerName": "Golam Masud",
+  "email": "imgolammasud@gmail.com",
   "seats": 2,
   "packageId": "PACKAGE_ID_HERE"
 }
